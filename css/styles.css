@@ -248,9 +248,9 @@ nav ul li a:hover {
         gap: 20px;
     }
 
-    search-filter input,
+    .search-filter input,
     .search-filter select {
-        width: 40%;
+        width: 90%;
     }
 
     #bookList {
