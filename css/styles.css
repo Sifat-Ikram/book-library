@@ -73,6 +73,13 @@ nav ul li a:hover {
     border-color: #047c7c;
 }
 
+.featured-books{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 700;
+    margin: 50px 0px;
+}
+
 /* Book List Grid */
 #bookList {
     display: grid;
@@ -92,6 +99,7 @@ nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
+    padding-bottom: 20px;
 }
 
 .book-card img {
