@@ -1,0 +1,120 @@
+/* Base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #f0a500;
+}
+
+
+
+.book-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+}
+
+.book-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.book-card h3 {
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.book-card p {
+    color: #555;
+    padding: 0 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #wishlistBooks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-card {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav ul {
+        flex-direction: row;
+    }
+
+    #wishlistBooks {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .book-card {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 1025px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #wishlistBooks {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .book-card {
+        max-width: 300px;
+    }
+}

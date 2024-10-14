@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h1>BookStore</h1>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+    </nav>
+
+    <div id="wishlistBooks"></div>
+
+    <script>
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        async function fetchWishlistBooks() {
+            const books = await Promise.all(
+                wishlist.map(async id => {
+                    const response = await fetch(`https://gutendex.com/books/?ids=${id}`);
+                    const data = await response.json();
+                    return data.results[0]; // Get the first result (book) from the response
+                })
+            );
+
+            document.getElementById('wishlistBooks').innerHTML = books
+                .map(book => `
+                    <div class="book-card">
+                        <img src="${book.formats['image/jpeg']}" alt="${book.title}">
+                        <h3>${book.title}</h3>
+                        <p>Author: ${book.authors.map(author => author.name).join(', ')}</p>
+                        <p>Genres: ${book.subjects ? book.subjects.join(', ') : 'N/A'}</p>
+                        <button onclick="viewDetails(${book.id})">View Details</button>
+                    </div>
+                `)
+                .join('');
+        }
+
+        function viewDetails(bookId) {
+            window.location.href = `/book-details.html?id=${bookId}`;
+        }
+
+        fetchWishlistBooks();
+    </script>
+</body>
+
+</html>

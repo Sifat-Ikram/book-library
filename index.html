@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="/js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <h1>BookStore</h1>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+    </nav>
+
+    <!-- Search & Filter Section -->
+    <section class="search-filter">
+        <input type="text" id="searchInput" placeholder="Search books by title...">
+        <select id="genreFilter">
+            <option value="">Filter by Genre</option>
+        </select>
+    </section>
+
+    <!-- Book List Section -->
+    <section id="bookList" class="book-list"></section>
+
+    <!-- Pagination -->
+    <div id="pagination" class="pagination"></div>
+
+    <script defer src="js/script.js"></script>
+</body>
+
+</html>
