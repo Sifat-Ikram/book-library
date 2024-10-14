@@ -40,7 +40,7 @@
                         <h3>${book.title}</h3>
                         <p>Author: ${book.authors.map(author => author.name).join(', ')}</p>
                         <p>Genres: ${book.subjects ? book.subjects.join(', ') : 'N/A'}</p>
-                        <button onclick="viewDetails(${book.id})">View Details</button>
+                        <button class="wishlist-btn" onclick="viewDetails(${book.id})">View Details</button>
                     </div>
                 `)
                 .join('');

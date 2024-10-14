@@ -136,6 +136,7 @@ nav ul li a:hover {
     cursor: pointer;
     transition: background-color 0.3s ease;
     gap: 10px;
+    border-radius: 5px;
 }
 
 .book-card button:hover {
@@ -156,6 +157,10 @@ nav ul li a:hover {
     padding: 20px;
     margin: 0px 30px;
     cursor: pointer;
+}
+
+.wishlist-btn{
+    margin: 0 10%;
 }
 
 /* Pagination */
@@ -288,6 +293,13 @@ nav ul li a:hover {
         grid-template-columns: 1fr;
     }
 
+    .featured-books{
+        font-size: 40px;
+        text-align: center;
+        font-weight: 600;
+        margin: 50px 0px;
+    }
+
     #wishlistBooks {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -320,6 +332,13 @@ nav ul li a:hover {
     nav ul li a {
         font-size: 14px;
         padding: 5px 5px;
+    }
+
+    .featured-books{
+        font-size: 30px;
+        text-align: center;
+        font-weight: 400;
+        margin: 30px 0px;
     }
 
     .book-card {
